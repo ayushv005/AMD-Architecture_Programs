@@ -1,0 +1,18 @@
+	area program, code, readonly
+entry
+main
+	LDR R0,val
+	MOV R1,#0x00
+	MOV R2,#0x01
+	MOV R5,#0x90
+LOOP ADD R3,R1,R2
+	STRB R3,[R5],#0x01
+	MOV R1,R2
+	MOV R2,R3
+	SUB R0,R0,#0x01
+	CMP R0,#0x00
+	BNE LOOP
+	SWI &11
+	area program, data, readonly
+val DCD &00000008
+	END

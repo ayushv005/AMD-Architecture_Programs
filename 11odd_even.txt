@@ -1,0 +1,8 @@
+	area program,code,readonly
+entry
+main
+	ldr r0,value1
+	and r1,r0,#0x01
+	swi &11
+value1 dcd &0000000A
+	end

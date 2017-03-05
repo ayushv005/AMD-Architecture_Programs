@@ -1,0 +1,15 @@
+	area program,code,readonly
+entry
+main
+	ldr r0,str
+	mov r2,#0x00
+loop
+	ldrb r1,[r0],#0x01 
+	cmp r1,#0x00
+	addne r2,r2,#0x01
+	bne loop
+	swi &11
+	area program,data,readonly
+str dcd string1
+string1 dcb "Manjinder"
+	end

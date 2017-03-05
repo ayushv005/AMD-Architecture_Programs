@@ -1,0 +1,14 @@
+	area program, code, readonly
+entry
+main
+	LDR R0,value1
+	STR [R0],#0x05
+	LDR R1,[R0]
+	LDR R2,value2
+	LDR R3,[R2]
+	ADD R4,R1,R3
+	swi &11
+	area program, data, readonly
+value1 DCD &a0000005
+value2 DCD &a0000003
+	END

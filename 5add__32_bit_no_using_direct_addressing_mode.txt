@@ -1,0 +1,11 @@
+	area program, code, readonly
+entry
+main
+	LDR R0, value1
+	LDR R1, value2
+	ADD R2,R0,R1
+	swi &11
+	area program, data, readonly
+value1 DCD &00000002
+value2 DCD &00000003
+	END

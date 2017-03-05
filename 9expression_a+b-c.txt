@@ -1,0 +1,20 @@
+	area program, code, readonly
+entry
+main
+	ADR R0, a
+	ADR R1, b
+	ADR R2, c
+	ADR R3, x
+	LDR R0,[R0]
+	LDR R1,[R1]
+	LDR R2,[R2]
+	ADD R0,R0,R1
+	SUB R0,R0,R2
+	STRB R0,[R3]
+	swi &11
+	area program, data, readonly
+a DCD 02
+b DCD 03
+c DCD 04
+x DCD 00
+	END
